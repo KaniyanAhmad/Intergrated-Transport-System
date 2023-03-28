@@ -2,7 +2,7 @@
  #include <stdlib.h>
  #include <conio.h>
  #include <windows.h>
- #include "graphics.h"
+ #include <graphics.h>
 
 void gotoxy(int, int);
 int main(){

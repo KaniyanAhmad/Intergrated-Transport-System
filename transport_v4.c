@@ -3,14 +3,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <windows.h>
+
 
 float price();
 void new_account();
 void booking();
 void menu();
 void account_check();
-void gotoxy(int, int);
 
 
 
@@ -135,45 +134,30 @@ int hour, minute,x,y;
         //Invoice
             system("cls");
 
+        printf("\n\n\n\t\t\t\t%s\t\t\t\t%d",name,upan);
 
-    x = 75;
-    y = 14;
+        printf("\n\t\t\t\tCodes: C%d  M%d  F%d",cp,mp,fp);
 
-    gotoxy(x,y);
-        printf("%s\t\t\t\t%d",name,upan);
-            y+=2;
-    gotoxy(x,y);
-        printf("Codes: C%d  M%d  F%d",cp,mp,fp);
-            y+=2;
-    gotoxy(x,y);
-        printf("Price: %.2f %.2f %.2f",pricec,pricem,pricef);
-            y+=2;
-    gotoxy(x,y);
-        printf("Time: %d:%d",hour,minute);
+
+        printf("\n\t\t\t\tPrice: %.2f %.2f %.2f",pricec,pricem,pricef);
+
+        printf("\n\t\t\t\tTime: %d:%d",hour,minute);
 
     if(hour==10&& minute==00){
-            y+=2;
-        gotoxy(x,y);
-            printf("Total Price: %.2f",total-0.4);
+
+            printf("\n\t\t\t\tTotal Price: %.2f",total-0.4);
                 printf("\t (Discount Applied)");
     }else{
-        y+=2;
-        gotoxy(x,y);
-            printf("Total Price: %.2f", total);
+
+            printf("\n\t\t\t\tTotal Price: %.2f", total);
 	       }
-    y+=5;
-        gotoxy(x,y);
-            printf("\t\t\t\t\t%d",ubn);
+
+            printf("\n\t\t\t\t\t\t\t\t\t%d",ubn);
 
 
        getch();
        menu();
 }
 
-void gotoxy(int x, int y){
-        COORD c;
-        c.X=x;
-        c.Y=y;
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
- }
+
 

@@ -1,16 +1,16 @@
+//Turbo C++ Version
+
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <windows.h>
 
 float price();
 void new_account();
 void booking();
 void menu();
 void account_check();
-void gotoxy(int, int);
 
 
 
@@ -34,7 +34,7 @@ float price(){
 	float m[]={0.0,5.75,12.5,22.25,34.5,45.0};
 	float f[]={0.0,1.5,3.0,4.5,6.0,8.0};
 
-	system("cls");
+	clrscr();
 
 	printf("\n\nC1____ $1.5\nC2____$3.0\nC3____$4.5\nC4____$6.0\nC5____$8.0");
         printf("\n Please Enter The Code From Home To Following Set C");
@@ -59,7 +59,7 @@ float price(){
 
 void menu(){
 int choice;
-        system("cls");
+        clrscr();
     printf("1: Make a New Account");
     printf("\n2: Make a new Booking");
     printf("\n3: Exit");
@@ -92,7 +92,7 @@ void account_check(){
 void new_account(){
 
 
-                system("cls");
+                clrscr();
 
             printf("Enter Your First Name");
             scanf("%s",&name);
@@ -109,7 +109,7 @@ void new_account(){
 void booking(){
     float total;
 int hour, minute,x,y;
-       system("cls");
+       clrscr();
        printf("\t\tMake a New Booking by Entering your UPAN");
             printf("Enter Your UPAN: ");
                 scanf("%d",&upanc);
@@ -123,7 +123,7 @@ int hour, minute,x,y;
        }
     //Journey details
         //Time
-        system("cls");
+        clrscr();
             printf("Enter the Time(ex 12:57): ");
                 scanf("%d:%d",&hour,&minute);
         //Price
@@ -133,7 +133,7 @@ int hour, minute,x,y;
                 ubn = (rand()%(99999+1-10000)+10000);
 
         //Invoice
-            system("cls");
+            clrscr();
 
 
     x = 75;
@@ -170,10 +170,5 @@ int hour, minute,x,y;
        menu();
 }
 
-void gotoxy(int x, int y){
-        COORD c;
-        c.X=x;
-        c.Y=y;
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
- }
+
 
